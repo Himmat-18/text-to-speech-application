@@ -1,0 +1,8 @@
+POST http://localhost:8080/api/tts
+Content-Type: application/json
+
+{
+  "text": "Hello Himmat, welcome to Text to Speech Application",
+  "language": "en-US",
+  "voice": "English Female"
+}

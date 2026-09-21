@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.tts-container {
+  width: 100%;
+  max-width: 750px;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  height: 180px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  resize: vertical;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #667eea;
+}
+
+.text-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.selectors {
+  display: flex;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.select-box {
+  flex: 1;
+}
+
+select {
+  width: 100%;
+  padding: 13px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #667eea;
+}
+
+.generate-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #667eea;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.generate-btn:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .selectors {
+    flex-direction: column;
+  }
+
+  .tts-container {
+    padding: 25px;
+  }
+}
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.clear-btn {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #e5e7eb;
+  color: #333;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.generate-btn {
+  flex: 2;
+  margin-top: 0;
+}
+.error-message {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.audio-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.audio-section h2 {
+  margin-bottom: 15px;
+}
+
+.audio-section audio {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
