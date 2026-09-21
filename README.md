@@ -1,8 +1,8 @@
 Text-to-Speech Application
 
-A full-stack Text-to-Speech application built using React.js, Spring Boot, Java, and ElevenLabs API.
+A full-stack Text-to-Speech application built using React.js, Spring Boot, Java, and the ElevenLabs API.
 
-The application converts user-entered text into speech and supports audio generation and download in MP3, WAV, and OGG formats.
+The application converts user-entered text into speech and provides audio playback and download functionality.
 
 Features
 
@@ -14,7 +14,7 @@ Features
 - MP3 audio generation
 - WAV audio download
 - OGG audio download
-- Audio player with play/pause, seek and volume controls
+- Audio player with play/pause, seek, and volume controls
 - Clear text functionality
 - Input validation
 - Error handling
@@ -58,17 +58,21 @@ text-to-speech-project/
 │   └── ...
 │
 ├── tts-backend/
-│   ├── src/
-│   │   └── main/
-│   │       └── java/
-│   │           └── com/
-│   │               └── example/
-│   │                   └── tts_backend/
-│   ├── pom.xml
-│   └── ...
+│   └── tts-backend/
+│       ├── src/
+│       │   └── main/
+│       │       ├── java/
+│       │       │   └── com/
+│       │       │       └── example/
+│       │       │           └── tts_backend/
+│       │       └── resources/
+│       │           └── application.properties
+│       ├── pom.xml
+│       └── ...
 │
 ├── package.json
 ├── vite.config.js
+├── TTS-Application-Postman-Collection.json
 └── README.md
 
 Installation and Setup
@@ -86,8 +90,16 @@ Make sure the following software is installed:
 
 Backend Setup
 
-1. Open the "tts-backend" folder.
-2. Configure the ElevenLabs API key in the backend.
+1. Open the backend project:
+
+tts-backend/tts-backend
+
+2. Configure the ElevenLabs API key using an environment variable.
+
+The backend uses:
+
+elevenlabs.api.key=${ELEVENLABS_API_KEY}
+
 3. Start the Spring Boot application.
 
 The backend will run on:
@@ -97,6 +109,7 @@ http://localhost:8080
 Frontend Setup
 
 1. Open the project root folder.
+
 2. Install the required dependencies:
 
 npm install
@@ -140,12 +153,14 @@ Request Body
 {
   "text": "Hello, welcome to the Text-to-Speech application.",
   "language": "English",
-  "voice": "Female"
+  "voice": "<ElevenLabs Voice ID>"
 }
+
+The "voice" field must contain a valid ElevenLabs voice ID supported by the backend.
 
 Response
 
-Returns generated audio data in MP3 format.
+Returns the generated audio data in MP3 format.
 
 Audio Formats
 
@@ -190,7 +205,7 @@ The application includes voice options for:
 - Spanish
 - German
 
-«Note: German voice generation may require a paid ElevenLabs plan depending on the selected voice/API availability.»
+Voice availability depends on the voices configured and available through the ElevenLabs API account.
 
 Running the Project
 
@@ -218,11 +233,17 @@ The following endpoints were tested:
 - "GET /api/voices"
 - "POST /api/tts"
 
+The Postman collection is included in the project repository:
+
+TTS-Application-Postman-Collection.json
+
 Security
 
 The ElevenLabs API key is configured on the backend and is not exposed directly in the React frontend.
 
-Do not commit the API key to GitHub.
+The API key is provided through an environment variable:
+
+ELEVENLABS_API_KEY
 
 Future Improvements
 
